@@ -3,10 +3,20 @@ package com.educandomarcio.course.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 //serializable para traficar na internet
-public class User implements Serializable {
-		
+@Entity
+public class User implements Serializable {		
 	private static final long serialVersionUID = 1L;
+	
+	//escolhe a chave estrangeira para jpa no caso o Id
+	//GeneratedVale torna-se automatico (auto incremento) a criação do ID
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String email;
