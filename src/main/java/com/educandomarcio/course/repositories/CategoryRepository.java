@@ -6,5 +6,4 @@ import com.educandomarcio.course.entities.Category;
 
 
 public interface CategoryRepository extends JpaRepository<Category, Long> {
-
 }
