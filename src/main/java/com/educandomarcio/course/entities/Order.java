@@ -30,6 +30,7 @@ public class Order implements Serializable {
 	private Integer orderStatus;
 	
 	//criação de chave estrangeira para o client ID
+	
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private User client;
@@ -104,9 +105,7 @@ public class Order implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}
-	
-	
+	}	
 
 	
 }

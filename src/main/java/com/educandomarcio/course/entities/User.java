@@ -24,7 +24,8 @@ public class User implements Serializable {
 	//GeneratedVale torna-se automatico (auto incremento) a criação do ID
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;	
+	private Long id;
+	
 	private String name;
 	private String email;
 	private String phone;
