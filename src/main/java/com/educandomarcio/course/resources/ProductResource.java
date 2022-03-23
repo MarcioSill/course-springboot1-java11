@@ -28,7 +28,7 @@ public class ProductResource {
 	//buscando usuario por ID, usa uma anotação para buscar o ID
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Product> findById(@PathVariable Long id){
-		Product obj = service.finById(id);
+		Product obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
 	

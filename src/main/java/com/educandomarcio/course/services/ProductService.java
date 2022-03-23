@@ -23,7 +23,7 @@ public class ProductService {
 	}
 	
 	//recuperando por ID
-	public Product finById(long id) {
+	public Product findById(long id) {
 		Optional<Product> obj = repository.findById(id);
 		return obj.get();
 	}

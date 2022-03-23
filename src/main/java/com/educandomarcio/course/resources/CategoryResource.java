@@ -28,8 +28,7 @@ public class CategoryResource {
 	//buscando usuario por ID, usa uma anotação para buscar o ID
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Category> findById(@PathVariable Long id){
-		Category obj = service.finById(id);
+		Category obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
-	}
-	
+	}	
 }

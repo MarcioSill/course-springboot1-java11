@@ -23,7 +23,7 @@ public class CategoryService {
 	}
 	
 	//recuperando por ID
-	public Category finById(long id) {
+	public Category findById(long id) {
 		Optional<Category> obj = repository.findById(id);
 		return obj.get();
 	}

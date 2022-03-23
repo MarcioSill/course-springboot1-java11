@@ -23,7 +23,7 @@ public class OrderService {
 	}
 	
 	//recuperando por ID
-	public Order finById(long id) {
+	public Order findById(long id) {
 		Optional<Order> obj = repository.findById(id);
 		return obj.get();
 	}

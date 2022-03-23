@@ -18,9 +18,13 @@ public class UserResource {
 	
 	@Autowired
 	private UserService service;
-
-	@GetMapping
-	public ResponseEntity<List<User>> findAll(){
+	
+	/*@GetMapping
+	public ResponseEntity<User> findAll() {
+		User u = new User(1L, "Maria", "maria@gmail.com", "9999999", "12345");
+		return ResponseEntity.ok().body(u);
+	}*/
+	public ResponseEntity<List<User>>  findAll() {
 		List<User> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
@@ -28,8 +32,8 @@ public class UserResource {
 	//buscando usuario por ID, usa uma anotação para buscar o ID
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<User> findById(@PathVariable Long id){
-		User obj = service.finById(id);
+		User obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
-	}
-	
-}
+	}	
+  }
+
