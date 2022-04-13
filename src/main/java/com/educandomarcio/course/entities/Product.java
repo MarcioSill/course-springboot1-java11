@@ -36,6 +36,7 @@ public class Product implements Serializable {
 	inverseJoinColumns = @JoinColumn(name = "category_id"))
 	private Set<Category> categories = new HashSet<>(); //do mesmo modo que usa List ArrayList usa Set e HashSet
 
+	//Usa-se o Set não o list para não receber repetição do mesmo item
 	@OneToMany(mappedBy = "id.product")
 	private Set<OrderItem> items = new HashSet<>();	
 		
