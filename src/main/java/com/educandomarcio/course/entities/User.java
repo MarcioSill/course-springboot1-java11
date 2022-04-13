@@ -22,6 +22,7 @@ public class User implements Serializable {
 	
 	//escolhe a chave estrangeira para jpa no caso o Id
 	//GeneratedVale torna-se automatico (auto incremento) a criação do ID
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;	
@@ -30,7 +31,8 @@ public class User implements Serializable {
 	private String phone;
 	private String password;
 	
-	@JsonIgnore
+	///@JsonIgnore
+	
 	@OneToMany(mappedBy = "client") //mapeado pelo atributo(client)
 	private List<Order> orders = new ArrayList<>();
 	
