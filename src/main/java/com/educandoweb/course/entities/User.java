@@ -1,4 +1,4 @@
-package com.educandomarcio.course.entities;
+package com.educandoweb.course.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,29 +11,26 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-//serializable para traficar na internet
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "td_user")
-public class User implements Serializable {		
+@Table(name = "tb_user")
+public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
-	//escolhe a chave estrangeira para jpa no caso o Id
-	//GeneratedVale torna-se automatico (auto incremento) a criação do ID
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;	
+	private Long id;
 	private String name;
 	private String email;
 	private String phone;
-	private String password;	
+	private String password;
 	
-	//@JsonIgnore	
-	@OneToMany(mappedBy = "client") //mapeado pelo atributo(client)
+	@JsonIgnore
+	@OneToMany(mappedBy = "client")
 	private List<Order> orders = new ArrayList<>();
 	
-	public User() {		
+	public User() {
 	}
 
 	public User(Long id, String name, String email, String phone, String password) {
@@ -84,11 +81,12 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
+
 	public List<Order> getOrders() {
 		return orders;
 	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -112,5 +110,5 @@ public class User implements Serializable {
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	}		
+	}
 }
